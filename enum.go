@@ -50,10 +50,8 @@ func (t *Type) Lookup(s string) Enum {
 
 func (t *Type) Values() []Enum {
 	values := make([]Enum, len(t.v))
-	i := 0
-	for _, v := range t.m {
-		values[i] = v
-		i++
+	for i, s := range t.v {
+		values[i] = t.m[s]
 	}
 	return values
 }
