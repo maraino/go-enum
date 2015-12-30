@@ -86,13 +86,24 @@ func TestLookupValue(t *testing.T) {
 	}
 }
 
-func TestValues(t *testing.T) {
+func TestNames(t *testing.T) {
 	// String enums
-	if !reflect.DeepEqual(e.Values(), []Enum{A, B}) {
+	if !reflect.DeepEqual(e.Names(), []string{"A", "B"}) {
 		t.Error()
 	}
 	// With interface
-	if !reflect.DeepEqual(ei.Values(), []Enum{AA, BB}) {
+	if !reflect.DeepEqual(ei.Names(), []string{"AA", "BB"}) {
+		t.Error()
+	}
+}
+
+func TestEnums(t *testing.T) {
+	// String enums
+	if !reflect.DeepEqual(e.Enums(), []Enum{A, B}) {
+		t.Error()
+	}
+	// With interface
+	if !reflect.DeepEqual(ei.Enums(), []Enum{AA, BB}) {
 		t.Error()
 	}
 }
