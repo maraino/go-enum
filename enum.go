@@ -79,10 +79,8 @@ func NewWithInterface(name string) *TypeWithInterface {
 }
 
 func (t *TypeWithInterface) Iota(s string, i interface{}) Enum {
-	e := Enum(len(t.n))
-	t.n = append(t.n, s)
+	e := t.Type.Iota(s)
 	t.i = append(t.i, i)
-	t.m[s] = e
 	return e
 }
 
